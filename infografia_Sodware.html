@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño de Software y Mejores Prácticas</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --info-color: #2980b9;
+            --spacing: 1rem;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: var(--box-shadow);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .intro {
+            background-color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-bottom: 2rem;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .principle {
+            background-color: var(--light-color);
+            padding: 1rem;
+            border-left: 4px solid var(--secondary-color);
+            margin-bottom: 1rem;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        .principle-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .color-coded {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .coding {
+            background-color: rgba(52, 152, 219, 0.2);
+            color: var(--secondary-color);
+        }
+        
+        .testing {
+            background-color: rgba(39, 174, 96, 0.2);
+            color: var(--success-color);
+        }
+        
+        .infrastructure {
+            background-color: rgba(243, 156, 18, 0.2);
+            color: var(--warning-color);
+        }
+        
+        .methodology {
+            background-color: rgba(142, 68, 173, 0.2);
+            color: #8e44ad;
+        }
+        
+        .design {
+            background-color: rgba(231, 76, 60, 0.2);
+            color: var(--accent-color);
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Diseño de Software y Mejores Prácticas</h1>
+            <p class="subtitle">Una infografía sobre principios fundamentales para crear software funcional, sostenible, escalable y mantenible</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section class="intro">
+            <h2>¿Qué es el Diseño de Software?</h2>
+            <p>El Diseño de Software es una disciplina estratégica, creativa y humana que implica la creación de una estructura y estrategia para construir sistemas de software. No se trata solo de funcionalidad, sino de crear productos que sean:</p>
+            <ul>
+                <li>Sostenibles</li>
+                <li>Escalables</li>
+                <li>Fáciles de mantener</li>
+                <li>Alineados con las expectativas de los usuarios (UX)</li>
+            </ul>
+            <p>Se basa en el diseño modular, que divide el sistema en componentes independientes que pueden desarrollarse, probarse y escalarse de forma flexible.</p>
+        </section>
+        
+        <h2>Mejores Prácticas de Desarrollo de Software</h2>
+        
+        <section class="grid">
+            <div class="card">
+                <div class="card-header">Metodologías de Desarrollo</div>
+                <div class="card-body">
+                    <div class="principle">
+                        <div class="principle-title methodology">Metodologías Ágiles</div>
+                        <p>Enfoque en adaptabilidad, flexibilidad y rapidez. Incluye Scrum, Kanban, XP, Lean, FDD, DSDM, ASD y Crystal.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title methodology">Modelo en Cascada</div>
+                        <p>Enfoque lineal ideal para proyectos con requisitos estables y bien definidos.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title methodology">Nexus</div>
+                        <p>Marco para escalar equipos Scrum en proyectos ágiles a gran escala.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Prácticas de Codificación</div>
+                <div class="card-body">
+                    <div class="principle">
+                        <div class="principle-title coding">Legibilidad y Código Limpio</div>
+                        <p>Escribir código legible, bien estructurado, reutilizable y fácil de depurar.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title coding">Refactorización Frecuente</div>
+                        <p>Reestructurar código existente para mejorar mantenibilidad sin cambiar funcionalidad.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title coding">Reducción de Deuda Técnica</div>
+                        <p>Gestionar "atajos" que priorizan entrega rápida sobre código perfecto.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Principios de Diseño</div>
+                <div class="card-body">
+                    <ul>
+                        <li><strong>KISS</strong> (Keep It Simple, Stupid): Mantener soluciones simples</li>
+                        <li><strong>YAGNI</strong> (You Aren't Gonna Need It): Evitar funcionalidades innecesarias</li>
+                        <li><strong>DRY</strong> (Don't Repeat Yourself): Evitar duplicación de código</li>
+                        <li><strong>SOLID</strong>: Cinco principios de diseño orientado a objetos</li>
+                    </ul>
+                    <p>Los principios SOLID crean código comprensible, legible y comprobable para trabajo colaborativo.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="grid">
+            <div class="card">
+                <div class="card-header">Prácticas de Pruebas</div>
+                <div class="card-body">
+                    <div class="color-coded testing">Pruebas Unitarias</div>
+                    <div class="color-coded testing">Desarrollo Impulsado por Comportamiento (BDD)</div>
+                    <div class="color-coded testing">Pruebas de Aceptación Automatizadas</div>
+                    <div class="color-coded testing">Pruebas de Rendimiento</div>
+                    <div class="color-coded testing">Desarrollo Basado en Pruebas (TDD)</div>
+                    <div class="color-coded testing">Pruebas de Integración</div>
+                    <div class="color-coded testing">Pruebas Funcionales</div>
+                    <div class="color-coded testing">Pruebas de Seguridad</div>
+                    <div class="color-coded testing">Pruebas de Penetración</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Entrega Continua y Operaciones</div>
+                <div class="card-body">
+                    <div class="principle">
+                        <div class="principle-title infrastructure">Integración Continua (CI)</div>
+                        <p>Fusionar frecuentemente cambios de código en un repositorio compartido.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title infrastructure">Despliegue Continuo (CD)</div>
+                        <p>Automatizar el proceso de entrega del software a entornos de prueba o producción.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title infrastructure">DevOps</div>
+                        <p>Fusionar desarrollo y operaciones mediante automatización para entregas más rápidas.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title infrastructure">Monitoreo y Registro</div>
+                        <p>Identificar errores y desencadenar acciones correctivas inmediatas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Infraestructura y Automatización</div>
+                <div class="card-body">
+                    <div class="principle">
+                        <div class="principle-title infrastructure">Infraestructura como Código (IaC)</div>
+                        <p>Manejar infraestructura en la nube mediante código para automatizar configuración.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title infrastructure">Gestión de la Configuración</div>
+                        <p>Configurar servidores, aplicaciones e infraestructura como código con herramientas como Ansible, Puppet y Chef.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title infrastructure">Computación en la Nube</div>
+                        <p>Utilizar plataformas como AWS, Azure y Google Cloud para escalar sistemas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="grid">
+            <div class="card">
+                <div class="card-header">Comunicación y Colaboración</div>
+                <div class="card-body">
+                    <div class="principle">
+                        <div class="principle-title">Comunicación Efectiva</div>
+                        <p>Establecer canales de comunicación claros entre miembros del equipo.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title">Grupos Autoorganizados</div>
+                        <p>Fomentar la colaboración para trabajar de forma autónoma y optimizar costos de control de calidad.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="principle-title">Revisión de Código</div>
+                        <p>Analizar código entre desarrolladores para detectar errores y fomentar aprendizaje colectivo.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Patrones de Diseño</div>
+                <div class="card-body">
+                    <p>Soluciones reutilizables para problemas comunes de diseño de software. El libro "Design Patterns" (1994) consolidó 23 patrones reutilizables en software orientado a objetos.</p>
+                    <p>En microservicios, incluyen patrones como:</p>
+                    <ul>
+                        <li>Aggregator</li>
+                        <li>Event Sourcing</li>
+                        <li>CQRS (Command Query Responsibility Segregation)</li>
+                        <li>Database per service</li>
+                        <li>Saga</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">Referencias y Estándares</div>
+                <div class="card-body">
+                    <p>Aunque no hay definiciones directas de IEEE sobre "Diseño de Software", se mencionan estándares relacionados:</p>
+                    <ul>
+                        <li>ISO/IEC 9126: Norma internacional sobre calidad del software</li>
+                        <li>Estilo de citación IEEE reconocido en ámbito académico</li>
+                    </ul>
+                    <p>En los años 80 se impulsaron estándares de calidad como CMM e ISO/IEC 9126.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Infografía basada en el documento "diseño de soware.pdf" - Resumen de conceptos clave de diseño de software y mejores prácticas</p>
+        </div>
+    </footer>
+</body>
+</html>
